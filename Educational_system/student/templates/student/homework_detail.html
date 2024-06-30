@@ -1,0 +1,34 @@
+{% extends 'student/dashboard.html' %}
+
+{% block content %}
+
+
+<h1>Homework qismi</h1>
+<div class="container mt-5">
+    <table class="table">
+        <thead>
+        <tr>
+
+            <th scope="col">Title</th>
+            <th scope="col"> Description</th>
+            <th scope="col"> File</th>
+
+
+        </tr>
+        </thead>
+        <tbody>
+
+        <tr class="table-danger">
+            <th scope="row">{{homework.lesson.title}}</th>
+            <td>{{homework.description}}</td>
+            <td><a href="{{homework.homework_file.url}}" download>{{homework.homework_file}}</a></td>
+
+
+        </tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+{% endblock content %}

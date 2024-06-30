@@ -1,0 +1,80 @@
+{% extends 'student/dashboard.html' %}
+
+{% block content %}
+
+<h2>{{group.name}}</h2>
+
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg">
+    <!-- Container wrapper -->
+    <div class="container-fluid">
+        <!-- Toggle button -->
+        <button
+                data-mdb-collapse-init
+                class="navbar-toggler"
+                type="button"
+                data-mdb-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+        >
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <!-- Collapsible wrapper -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!-- Navbar brand -->
+
+            <!-- Left links -->
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'teachers:gruh' group.id %}">Darslar</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'teachers:homework' group.id %}">Uyga vazafalar</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Yo'qlama</a>
+                </li><li class="nav-item">
+                <a class="nav-link" href="{% url 'teachers:student' group.id %}">O'quvchilar</a>
+            </li>
+            </ul>
+            <!-- Left links -->
+        </div>
+        <!-- Collapsible wrapper -->
+
+
+    </div>
+    <!-- Container wrapper -->
+</nav>
+<!-- Navbar -->
+<br>
+<table class="table">
+    <thead>
+    <tr>
+
+        <th scope="col">First_name</th>
+        <th scope="col">Group</th>
+        <th scope="col"></th>
+
+    </tr>
+    </thead>
+    <tbody>
+    {% for student in students %}
+    <tr class="table-danger">
+
+        <th scope="row">{{student.user.first_name}}</th>
+
+        <th scope="row">{{student.group.name}}</th>
+
+
+        <td></td>
+
+    </tr>
+    {% endfor %}
+
+    </tbody>
+</table>
+
+{% endblock content %}

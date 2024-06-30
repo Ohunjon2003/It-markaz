@@ -1,0 +1,15 @@
+{% extends 'base.html'  %}
+
+{% block content %}
+
+<h1>Login qismi</h1>
+<div class="container mt-5">
+    <form method="post">
+        {% csrf_token %}
+        {{form}}
+        <button type="submit" class="btn btn-outline-success">Login</button>
+    </form>
+
+</div>
+
+{% endblock content %}

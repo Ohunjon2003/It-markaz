@@ -1,0 +1,27 @@
+{% extends 'student/dashboard.html' %}
+
+{% block content %}
+<table class="table">
+    <thead>
+    <tr>
+
+        <th scope="col">Name</th>
+        <th scope="col">Yaratilgan vaqti</th>
+        <th scope="col"> Status</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    {% for group in groups %}
+    <tr class="table-danger">
+        <th scope="row"><a href="{% url 'teachers:gruh' group.id %}">{{group.name}}</a></th>
+        <td>{{group.data_created}}</td>
+        <td>active</td>
+
+    </tr>
+    {% endfor %}
+
+    </tbody>
+</table>
+
+{% endblock content %}

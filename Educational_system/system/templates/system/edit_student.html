@@ -1,0 +1,15 @@
+{% extends 'base.html'  %}
+
+{% block content %}
+
+<h1>Edit Student page</h1>
+<div class="container mt-5">
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{form}}
+        <button type="submit" class="btn btn-outline-success">Save</button>
+    </form>
+
+</div>
+
+{% endblock content %}
